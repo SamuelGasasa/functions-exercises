@@ -57,7 +57,20 @@ function myPower(x, n) {
 //Question 5
 function getFirstNotRepeating(str) {
   // your code here
-  return "";
+  let char='';
+  for(let i=0;i<str.length;i++){
+    char=str[i]
+    for(let j=i+1 ;j<str.length;j++){
+      if(char===str[j]){
+        char='wrong';
+        break;
+      }
+    }
+    if(char===str[i]){
+      break;
+    }
+  }
+  return char;
 }
 
 //Question 6 (Bonus)
