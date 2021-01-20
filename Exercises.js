@@ -14,23 +14,22 @@ function allCombinations(str) {
   // your code here
   let temp='';
   for(let i=0;i<str.length;i++){
-    temp=temp+str[i];
+    temp+=str.charAt(i);
     for(let j=0;j<combinations.length;j++){
       if(temp===combinations[j]){
-        combinations.push(temp);
+       combinations= combinations.push(temp);
       }
     }
   }
-  temp='';
+  let revStr='';
   for(let i=str.length-1;i>=0;i--){
-    temp=temp+str[i];
+    revStr+=str.charAt(i);
     for(let j=0;j<combinations.length;j++){
-      if(temp===combinations[j]){
-        combinations.push(temp);
+      if(revStr===combinations[j]){
+        combinations= combinations.push(revStr);
       }
     }
   }
-  //
   return combinations;
 }
 
@@ -87,22 +86,38 @@ function isPrefectNumber(num) {
 
 // *** Playground ***
 // Feel free to run and test your code here on your own
-const str = 'The quick brown fox jumps over the lazy dog.';
-
-const words = str.split(' ');
-console.log(words);
-
-const chars = str.split('');
-console.log(chars);
-let sum=0;
-let num =6;
-for(let i=1;i<num;i++){
-  if(num%1===0)
-  {
-    sum+=i;
+let str='dog';
+let combinations = [];
+let count=0;
+// your code here
+let temp=str.charAt(0);
+console.log(temp);
+combinations.push(temp);
+console.log(combinations);
+for(let i=1;i<str.length;i++){
+  temp+=str.charAt(i);
+  for(let j=0;j<combinations.length;j++){
+    if(temp !==combinations[j]){
+      count++;
+    }
   }
+  if(count===combinations.length)
+  combinations.push(temp);
+  console.log(temp)
 }
-console.log(sum);
+console.log(temp);
+let revStr='';
+for(let i=str.length-1;i>=0;i--){
+  revStr+=str.charAt(i);
+  for(let j=0;j<combinations.length;j++){
+    if(revStr===combinations[j]){
+      continue
+    }
+  }
+  combinations.push(revStr);
+}
+console.log(revStr);
+console.log(combinations);
 // *** End of Playground ***
 
 // Don't touch me :)
