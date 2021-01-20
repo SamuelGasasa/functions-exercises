@@ -12,15 +12,36 @@ function myReverse(str) {
 function allCombinations(str) {
   let combinations = [];
   // your code here
-
+  let temp='';
+  for(let i=0;i<str.length;i++){
+    temp=temp+str[i];
+    for(let j=0;j<combinations.length;j++){
+      if(temp===combinations[j]){
+        combinations.push(temp);
+      }
+    }
+  }
+  temp='';
+  for(let i=str.length-1;i>=0;i--){
+    temp=temp+str[i];
+    for(let j=0;j<combinations.length;j++){
+      if(temp===combinations[j]){
+        combinations.push(temp);
+      }
+    }
+  }
   //
   return combinations;
 }
 
 //Question 3
 function allCaps(str) {
-  // your code here
-  return "";
+  let allCap = str.split(' ');
+  for (let i = 0; i < splitStr.length; i++) {
+
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+  }
+  return splitStr.join(' ');
 }
 
 //Question 4
@@ -43,7 +64,13 @@ function isPrefectNumber(num) {
 
 // *** Playground ***
 // Feel free to run and test your code here on your own
+const str = 'The quick brown fox jumps over the lazy dog.';
 
+const words = str.split(' ');
+console.log(words);
+
+const chars = str.split('');
+console.log(chars);
 // *** End of Playground ***
 
 // Don't touch me :)
