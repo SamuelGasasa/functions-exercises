@@ -75,8 +75,14 @@ function getFirstNotRepeating(str) {
 
 //Question 6 (Bonus)
 function isPrefectNumber(num) {
-  // your code here
-  return "I'm not interested in the bonus question :(";
+  let sum=0;
+  for(let i=1;i<num;i++){
+    if(num%i===0)
+    {
+      sum+=i;
+    }
+  }
+  return sum===num;
 }
 
 // *** Playground ***
@@ -88,6 +94,15 @@ console.log(words);
 
 const chars = str.split('');
 console.log(chars);
+let sum=0;
+let num =6;
+for(let i=1;i<num;i++){
+  if(num%1===0)
+  {
+    sum+=i;
+  }
+}
+console.log(sum);
 // *** End of Playground ***
 
 // Don't touch me :)
