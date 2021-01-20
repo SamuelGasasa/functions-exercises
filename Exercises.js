@@ -47,8 +47,8 @@ function allCaps(str) {
 //Question 4
 function myPower(x, n) {
   // your code here
-  let sum=0;
-  for(let i=1;i<=0;i++){
+  let sum=x;
+  for(let i=1;i<=n;i++){
     sum*=n;
   }
   return sum;
