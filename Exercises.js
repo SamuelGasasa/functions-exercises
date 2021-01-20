@@ -37,17 +37,21 @@ function allCombinations(str) {
 //Question 3
 function allCaps(str) {
   let allCap = str.split(' ');
-  for (let i = 0; i < splitStr.length; i++) {
+  for (let i = 0; i < allCap.length; i++) {
 
-      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+      allCap[i] = allCap[i].charAt(0).toUpperCase() + allCap[i].substring(1);     
   }
-  return splitStr.join(' ');
+  return allCap.join(' ');
 }
 
 //Question 4
 function myPower(x, n) {
   // your code here
-  return "";
+  let sum=0;
+  for(let i=1;i<=0;i++){
+    sum*=n;
+  }
+  return sum;
 }
 
 //Question 5
