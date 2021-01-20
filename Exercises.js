@@ -12,22 +12,9 @@ function myReverse(str) {
 function allCombinations(str) {
   let combinations = [];
   // your code here
-  let temp='';
   for(let i=0;i<str.length;i++){
-    temp+=str.charAt(i);
-    for(let j=0;j<combinations.length;j++){
-      if(temp===combinations[j]){
-       combinations= combinations.push(temp);
-      }
-    }
-  }
-  let revStr='';
-  for(let i=str.length-1;i>=0;i--){
-    revStr+=str.charAt(i);
-    for(let j=0;j<combinations.length;j++){
-      if(revStr===combinations[j]){
-        combinations= combinations.push(revStr);
-      }
+    for(let j=i+1;j<=str.length;j++){
+      combinations.push(str.slice(i,j));
     }
   }
   return combinations;
